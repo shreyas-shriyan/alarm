@@ -2,6 +2,7 @@ import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
 import { useState } from "react";
 import { DateTimePickerAndroid } from "@react-native-community/datetimepicker";
+import Button from "./components/Button";
 
 export default function App() {
   const [date, setDate] = useState(new Date());
@@ -23,17 +24,10 @@ export default function App() {
   const showTimepicker = () => {
     showMode("time");
   };
+
   return (
-    <View style={styles.container}>
-      <Text className="border-2 border-red-700 rounded-md text-center px-2 py-1">
-        sdiuf
-      </Text>
-      <Button className="text-xl rounded-sm mb-1" title="ishdf" />
-      <Button
-        className="text-xl rounded-sm"
-        onPress={showTimepicker}
-        title="Show time picker!"
-      />
+    <View className="flex-1 justify-center">
+      <Button text="Hello" onPress={showTimepicker} />
       <StatusBar style="auto" />
     </View>
   );
